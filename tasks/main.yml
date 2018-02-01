@@ -1,0 +1,16 @@
+---
+
+
+# http://docs.ansible.com/ansible/latest/template_module.html
+- name: Copy database deploy script to remote host
+  template:
+    src: "{{ mysql_db_file }}"
+    dest: "/tmp/database.sql"
+    owner: root
+    group: root
+    mode: 0777
+
+# http://docs.ansible.com/ansible/latest/shell_module.html
+- name: Run a deployment SQL script
+  shell: |
+    mysql -h {{ mysql_bind_address }} -u {{ mysql_login_user }} -p{{ mysql_login_password }} < /tmp/database.sql
