@@ -2,7 +2,7 @@
 dependencies: []
 
 galaxy_info:
-  role_name: mysql-deploy
+  role_name: mysql_deploy
   author: apolloclark
   description: Deploy a MySQL script
   company: "Apollo Clark"
